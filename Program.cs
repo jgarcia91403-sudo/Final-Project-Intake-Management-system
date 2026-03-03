@@ -130,10 +130,10 @@ namespace Final_Project_Intake_Management_system
         static void Main(string[] args)
         {
             int choice = 0;
-                Console.WriteLine("\n==== JOB APPLICANT INTAKE SYSTEM ====");
-                Console.WriteLine("1. Add New Record");
-                Console.WriteLine("2. View All Records");
-                Console.WriteLine("3. Search Records");
+                Console.WriteLine("\n==== JOB APPLICATION ====");
+                Console.WriteLine("1. Add New Aplication");
+                Console.WriteLine("2. View All Aplication");
+                Console.WriteLine("3. Search All Aplications");
                 Console.WriteLine("4. Display Summary Statistics");
                 Console.WriteLine("5. Exit");
             do
@@ -174,6 +174,7 @@ namespace Final_Project_Intake_Management_system
             {
                 try
                 {
+                    Console.WriteLine();
                 Console.Write("First Name:");
                 string first = Console.ReadLine();
                 Console.Write("Last Name:");
@@ -202,9 +203,11 @@ namespace Final_Project_Intake_Management_system
                     bool relocate = Convert.ToBoolean(Console.ReadLine());
                     Console.Write("Has Certifications (true/false):");
                     bool certs = Convert.ToBoolean(Console.ReadLine());
+                    Console.WriteLine();
                     Console.WriteLine("Position: 1-Developer, 2-Analyst, 3-IT Support");
                     Console.Write("Enter position choice:");
                     int positionChoice = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine();
                     Console.WriteLine("Employment Type: 1-Full-Time, 2-Part-Time, 3-Contract");
                     Console.Write("Enter Employment Type Choice:");
                     int employmentChoice = Convert.ToInt32(Console.ReadLine());
@@ -231,7 +234,8 @@ namespace Final_Project_Intake_Management_system
             }
             static void Search()
             {
-                Console.WriteLine("Enter last name to search:");
+                Console.WriteLine();
+                Console.Write("Enter last name to search:");
                 string search = Console.ReadLine().ToLower();
                 bool found = false;
                 foreach (Applicant app in applicants)
