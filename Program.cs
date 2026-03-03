@@ -9,7 +9,7 @@ namespace Final_Project_Intake_Management_system
         public string Email;
         public string Phone;
         public string City;
-        public string postiionApplied;
+        public string PositionApplied;
         public string EducationLevel;
 
         public int Age;
@@ -69,9 +69,9 @@ namespace Final_Project_Intake_Management_system
                     PositionApplied = "Data Analyst";
                     break;
                 case 3:
-                    positionApplied = "IT Support";
+                    PositionApplied = "IT Support";
                     break;
-                    default;
+                default:
                     PositionApplied = "Unknown";
                     break;
             }
@@ -106,12 +106,21 @@ namespace Final_Project_Intake_Management_system
                 salaryCategory = "Medium";
             else
                 salaryCategory = "Low";
-            {
-
-            }
-            {
-
-            }
+            if ((OverallScore >= 75 && HasDegree) || HasCertifications)
+                EligibleForInterview = true;
+            else
+                EligibleForInterview = false;
+        }
+        public void Display()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"ID: {ApplicationID}");
+            Console.WriteLine($"Name: {FirstName} {LastName}");
+            Console.WriteLine($"Position: {PositionApplied}");
+            Console.WriteLine($"Experience Level: {ExperienceLevel}");
+            Console.WriteLine($"Overall Score: {OverallScore:F2}");
+            Console.WriteLine($"Eligible: {EligibleForInterview}");
+            Console.WriteLine();
         }
     }
     internal class Program
