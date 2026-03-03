@@ -130,15 +130,16 @@ namespace Final_Project_Intake_Management_system
         static void Main(string[] args)
         {
             int choice = 0;
-            do
-            {
                 Console.WriteLine("\n==== JOB APPLICANT INTAKE SYSTEM ====");
                 Console.WriteLine("1. Add New Record");
                 Console.WriteLine("2. View All Records");
                 Console.WriteLine("3. Search Records");
                 Console.WriteLine("4. Display Summary Statistics");
                 Console.WriteLine("5. Exit");
+            do
+            {
                 Console.Write("Enter Choice: ");
+                Console.WriteLine();
                 try
                 {
                     choice = Convert.ToInt32(Console.ReadLine());
@@ -213,6 +214,18 @@ namespace Final_Project_Intake_Management_system
                 catch
                 {
                     Console.WriteLine("Invalid input detected. Record not added.");
+                }
+            }
+            static void ViewAll()
+            {
+                if (applicants.Count == 0)
+                {
+                    Console.WriteLine("No Records Available.");
+                    return;
+                }
+                foreach (Applicant app in applicants)
+                {
+                    app.Display();
                 }
             }
             static void Search()
