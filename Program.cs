@@ -58,6 +58,61 @@ namespace Final_Project_Intake_Management_system
             CalculateDerivedFields();
 
         }
+        public void SetSelections()
+        {
+            switch (PositionChoice)
+            {
+                case 1:
+                    PositionApplied = "Software Developer";
+                    break;
+                case 2:
+                    PositionApplied = "Data Analyst";
+                    break;
+                case 3:
+                    positionApplied = "IT Support";
+                    break;
+                    default;
+                    PositionApplied = "Unknown";
+                    break;
+            }
+            switch (EmploymentTypeChoice)
+            {
+                case 1:
+                    EmploymentType = "Full-Time";
+                    break;
+                case 2:
+                    EmploymentType = "Part-Time";
+                    break;
+                case 3:
+                    EmploymentType = "Contract";
+                    break;
+                default:
+                    EmploymentType = "Unknown";
+                    break;
+            }
+        }
+        public void CalculateDerivedFields()
+        {
+            OverallScore = (TechnicalScore + CommunicatinScore + CultureFitScore) / 3;
+            if (YearsExperience >= 5)
+                ExperienceLevel = "Senior";
+            else if (YearsExperience >= 2)
+                ExperienceLevel = "Mid-Level";
+            else
+                ExperienceLevel = "Entry-Level";
+            if (ExpectedSalary > 100000)
+                salaryCategory = "High";
+            else if (ExpectedSalary > 60000)
+                salaryCategory = "Medium";
+            else
+                salaryCategory = "Low";
+            {
+
+            }
+            {
+
+            }
+        }
     }
     internal class Program
     {
