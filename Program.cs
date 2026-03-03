@@ -139,7 +139,6 @@ namespace Final_Project_Intake_Management_system
             do
             {
                 Console.Write("Enter Choice: ");
-                Console.WriteLine();
                 try
                 {
                     choice = Convert.ToInt32(Console.ReadLine());
@@ -204,8 +203,10 @@ namespace Final_Project_Intake_Management_system
                     Console.Write("Has Certifications (true/false):");
                     bool certs = Convert.ToBoolean(Console.ReadLine());
                     Console.WriteLine("Position: 1-Developer, 2-Analyst, 3-IT Support");
+                    Console.Write("Enter position choice:");
                     int positionChoice = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Employment Type:");
+                    Console.WriteLine("Employment Type: 1-Full-Time, 2-Part-Time, 3-Contract");
+                    Console.Write("Enter Employment Type Choice:");
                     int employmentChoice = Convert.ToInt32(Console.ReadLine());
                     Applicant app = new Applicant(idCounter++, first, last, email, phone, city, age, yearsExp, salary, tech, comm, culture, degree, relocate, certs, positionChoice, employmentChoice);
                     applicants.Add(app);
