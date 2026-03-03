@@ -215,6 +215,26 @@ namespace Final_Project_Intake_Management_system
                     Console.WriteLine("Invalid input detected. Record not added.");
                 }
             }
+            static void Search()
+            {
+                Console.WriteLine("Enter last name to search:");
+                string search = Console.ReadLine().ToLower();
+                bool found = false;
+                foreach (Applicant app in applicants)
+                {
+                    if (app.LastName.ToLower() == search)
+                    {
+                        app.Display();
+                        found = true;
+                    }
+                }
+                if (!found)
+                    Console.WriteLine("No matching records found.");
+            }
+            static void DisplaySummary()
+            {
+
+            }
         }
     }
 }
