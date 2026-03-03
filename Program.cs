@@ -17,6 +17,7 @@ namespace Final_Project_Intake_Management_system
         public int ExpectedSalary;
         public double TechnicalScore;
         public double CommunicatinScore;
+        public double CultureFitScore;
         public double OverallScore;
         public int ApplicationID;
 
@@ -29,6 +30,34 @@ namespace Final_Project_Intake_Management_system
         public int EmploymentTypeChoice;
         public string EmploymentType;
 
+        public DateTime ApplicationDate;
+        public string ExperienceLevel;
+        public string salaryCategory;
+
+        public Applicant(int id, string first,string last, string email, string phone, string city, int age, int yearsExp, int salary, double tech, double comm, double culture, bool degree, bool relocate, bool certs, int positionChoice, int employmentChoice)
+        {
+            ApplicationID = id;
+            FirstName = first;
+            LastName = last;
+            Email = email;
+            Phone = phone;
+            City = city;
+            Age = age;
+            YearsExperience = yearsExp;
+            ExpectedSalary = salary;
+            TechnicalScore = tech;
+            CommunicatinScore = comm;
+            CultureFitScore = culture;
+            HasDegree = degree;
+            IsWillingToRelocate = relocate;
+            HasCertifications = certs;
+            PositionChoice = positionChoice;
+            EmploymentTypeChoice = employmentChoice;
+            ApplicationDate = DateTime.Now;
+            SetSelections();
+            CalculateDerivedFields();
+
+        }
     }
     internal class Program
     {
