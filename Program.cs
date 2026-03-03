@@ -157,7 +157,7 @@ namespace Final_Project_Intake_Management_system
                         ViewAll();
                         break;
                     case 3:
-                        SearchOption();
+                        Search();
                         break;
                     case 4:
                         DisplaySummary();
@@ -170,6 +170,51 @@ namespace Final_Project_Intake_Management_system
                             break;
                 }
             } while (choice != 5);
+            static void AddApplicant()
+            {
+                try
+                {
+                Console.Write("First Name:");
+                string first = Console.ReadLine();
+                Console.Write("Last Name:");
+                string last = Console.ReadLine();
+                    Console.Write("Email:");
+                    string email = Console.ReadLine();
+                    Console.Write("Phone:");
+                    string phone = Console.ReadLine();
+                    Console.Write("City:");
+                    string city = Console.ReadLine();
+                    Console.Write("Age:");
+                    int age = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Years Experience:");
+                    int yearsExp = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Expected Salary:");
+                    int salary = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Technical score:");
+                    double tech = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Communication Score:");
+                    double comm = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Culture Fit Score:");
+                    double culture = Convert.ToDouble(Console.ReadLine());
+                    Console.Write("Has Degree (true/false):");
+                    bool degree = Convert.ToBoolean(Console.ReadLine());
+                    Console.Write("Willing to Relocate (true/false):");
+                    bool relocate = Convert.ToBoolean(Console.ReadLine());
+                    Console.Write("Has Certifications (true/false):");
+                    bool certs = Convert.ToBoolean(Console.ReadLine());
+                    Console.WriteLine("Position: 1-Developer, 2-Analyst, 3-IT Support");
+                    int positionChoice = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Employment Type:");
+                    int employmentChoice = Convert.ToInt32(Console.ReadLine());
+                    Applicant app = new Applicant(idCounter++, first, last, email, phone, city, age, yearsExp, salary, tech, comm, culture, degree, relocate, certs, positionChoice, employmentChoice);
+                    applicants.Add(app);
+                    Console.WriteLine("Applicant successfully added!");
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid input detected. Record not added.");
+                }
+            }
         }
     }
 }
