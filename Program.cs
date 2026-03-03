@@ -275,3 +275,6 @@ namespace Final_Project_Intake_Management_system
         }
     }
 }
+/*The idea behind this is to craet an application by having you input information about yourself.
+ * Then after you finished the application you can view the application you just finished. 
+ * The last thing it will be able to give an errore if you put something in the wrong spot.*/
