@@ -125,9 +125,51 @@ namespace Final_Project_Intake_Management_system
     }
     internal class Program
     {
+        static List<Applicant> applicants = new List<Applicant>();
+        static int idCounter = 1;
         static void Main(string[] args)
         {
-            
+            int choice = 0;
+            do
+            {
+                Console.WriteLine("\n==== JOB APPLICANT INTAKE SYSTEM ====");
+                Console.WriteLine("1. Add New Record");
+                Console.WriteLine("2. View All Records");
+                Console.WriteLine("3. Search Records");
+                Console.WriteLine("4. Display Summary Statistics");
+                Console.WriteLine("5. Exit");
+                Console.Write("Enter Choice: ");
+                try
+                {
+                    choice = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid input. Please enter a number between 1 and 5.");
+                    continue;
+                }
+                switch (choice)
+                {
+                    case 1:
+                        AddApplicant();
+                        break;
+                    case 2:
+                        ViewAll();
+                        break;
+                    case 3:
+                        SearchOption();
+                        break;
+                    case 4:
+                        DisplaySummary();
+                        break;
+                    case 5:
+                        Console.WriteLine(" Exiting Program...");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid menu option."),
+                            break;
+                }
+            } while (choice != 5);
         }
     }
 }
