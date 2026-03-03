@@ -166,7 +166,7 @@ namespace Final_Project_Intake_Management_system
                         Console.WriteLine(" Exiting Program...");
                         break;
                     default:
-                        Console.WriteLine("Invalid menu option."),
+                        Console.WriteLine("Invalid menu option.");
                             break;
                 }
             } while (choice != 5);
@@ -233,7 +233,26 @@ namespace Final_Project_Intake_Management_system
             }
             static void DisplaySummary()
             {
-
+                if (applicants.Count == 0)
+                {
+                    Console.WriteLine("No records available.");
+                    return;
+                }
+                double totalExperience = 0;
+                double totalScore = 0;
+                int eligibleCount = 0;
+                foreach (Applicant app in applicants)
+                {
+                    totalExperience += app.YearsExperience;
+                    totalScore += app.OverallScore;
+                    if (app.EligibleForInterview)
+                        eligibleCount++;
+                }
+                Console.WriteLine("==== SUMMARY ====");
+                Console.WriteLine($"Total Applicants: {applicants.Count}");
+                Console.WriteLine($"Average Experience: {totalExperience}");
+                Console.WriteLine($"Average Overall Score: {totalScore / applicants.Count:F2}");
+                Console.WriteLine($"Eligible Percentage: {(eligibleCount * 100.0) / applicants.Count:F2}%");
             }
         }
     }
